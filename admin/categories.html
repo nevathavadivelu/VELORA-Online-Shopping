@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Categories | VELORA</title>
+
+    <link rel="stylesheet" href="../css/admin-categories.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+       
+<header class="topbar">
+
+    <a href="dashboard.html" class="brand">
+        VELORA<span>.</span>
+    </a>
+
+    <nav class="admin-nav">
+
+        <a href="dashboard.html">Dashboard</a>
+
+        <a href="products.html">Products</a>
+
+        <a href="categories.html" class="active">Categories</a>
+
+        <a href="orders.html">Orders</a>
+
+        <a href="customers.html">Customers</a>
+
+        <a href="reports.html">Reports</a>
+<script src="../js/admin-logout.js"></script>
+    </nav>
+
+    <button id="adminLogout" class="logout-btn">
+        Logout
+    </button>
+
+</header>
+
+        <main class="main-content">
+
+            <section class="page-heading">
+                <div>
+                    <p class="eyebrow">STORE MANAGEMENT</p>
+                    <h1>Manage Categories</h1>
+                    <p class="subtitle">
+                        Organise your VELORA product collections.
+                    </p>
+                </div>
+
+                <button id="addCategoryBtn" class="primary-btn">
+                    + Add Category
+                </button>
+            </section>
+
+            <section class="stats-grid">
+
+                <article class="stat-card">
+                    <p>Total Categories</p>
+                    <h2 id="totalCategories">0</h2>
+                </article>
+
+                <article class="stat-card">
+                    <p>Categories with Products</p>
+                    <h2 id="usedCategories">0</h2>
+                </article>
+
+                <article class="stat-card">
+                    <p>Empty Categories</p>
+                    <h2 id="emptyCategories">0</h2>
+                </article>
+
+            </section>
+
+            <section class="content-card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>All Categories</h2>
+                        <p>Manage your store's product categories.</p>
+                    </div>
+
+                    <button id="refreshCategories" class="secondary-btn">
+                        Refresh
+                    </button>
+                </div>
+
+                <div id="categoryMessage" class="message"></div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category Name</th>
+                                <th>Category ID</th>
+                                <th>Products</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="categoryList">
+                            <tr>
+                                <td colspan="4" class="loading">
+                                    Loading categories...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Category Modal -->
+
+    <div id="categoryModal" class="modal">
+
+        <div class="modal-content">
+
+            <button id="closeModal" class="close-btn">&times;</button>
+
+            <p class="eyebrow">VELORA COLLECTIONS</p>
+
+            <h2 id="modalTitle">Add Category</h2>
+
+            <form id="categoryForm">
+
+                <label for="categoryName">Category Name</label>
+
+                <input
+                    type="text"
+                    id="categoryName"
+                    placeholder="Enter category name"
+                    maxlength="40"
+                    required
+                >
+
+                <p class="input-help">
+                    Example: Beauty, Books, Electronics
+                </p>
+
+                <div class="modal-actions">
+                    <button type="button" id="cancelCategory" class="secondary-btn">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="primary-btn">
+                        Save Category
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/firebase-auth.js"></script>
+    <script src="../js/firestore.js"></script>
+    <script src="../js/admin-categories.js"></script>
+
+</body>
+</html>

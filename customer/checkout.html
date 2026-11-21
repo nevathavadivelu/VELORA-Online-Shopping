@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Secure Checkout | VELORA</title>
+
+    <link rel="stylesheet" href="../css/checkout.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .credit-info {
+            display: none;
+            margin-top: 18px;
+            padding: 18px;
+            background: #e8eee9;
+            border: 1px solid #d5e0d8;
+            border-radius: 8px;
+            color: #193d32;
+        }
+
+        .credit-info p {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .credit-info strong {
+            font-weight: 700;
+        }
+
+        .credit-note {
+            margin-top: 12px;
+            font-size: 12px;
+            color: #777b73;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="announcement-bar">
+        Complimentary delivery on orders above ₹999
+    </div>
+
+    <header class="navbar">
+        <a href="home.html" class="logo">VELORA<span>.</span></a>
+
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="cart.html">My Cart</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="dashboard.html">My Profile</a>
+            <a href="#" id="logoutButton">Logout</a>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="home.html">Home</a>
+        <span>/</span>
+        <a href="cart.html">My Cart</a>
+        <span>/</span>
+        <span>Checkout</span>
+    </div>
+
+    <section class="checkout-heading">
+        <p class="eyebrow">THE FINAL STEP</p>
+        <h1>Secure Checkout</h1>
+        <p>Complete your details and let us take care of the rest.</p>
+    </section>
+
+    <main class="checkout-container">
+
+        <section class="checkout-form-section">
+
+            <form id="checkoutForm">
+
+                <!-- CONTACT INFORMATION -->
+
+                <div class="form-card">
+
+                    <div class="form-section-heading">
+                        <span class="step-number">01</span>
+                        <div>
+                            <h2>Contact Information</h2>
+                            <p>How can we reach you?</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your 10-digit phone number"
+                            pattern="[6-9][0-9]{9}"
+                            maxlength="10"
+                            inputmode="numeric"
+                            autocomplete="tel"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <!-- DELIVERY ADDRESS -->
+
+                <div class="form-card">
+
+                    <div class="form-section-heading">
+                        <span class="step-number">02</span>
+                        <div>
+                            <h2>Delivery Address</h2>
+                            <p>Where should we deliver your order?</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">House / Street Address</label>
+                        <textarea
+                            id="address"
+                            name="address"
+                            placeholder="House number, street, area and landmark"
+                            rows="3"
+                            autocomplete="street-address"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input
+                                type="text"
+                                id="city"
+                                name="city"
+                                placeholder="Enter city"
+                                autocomplete="address-level2"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pincode">Pincode</label>
+                            <input
+                                type="text"
+                                id="pincode"
+                                name="pincode"
+                                placeholder="6-digit pincode"
+                                pattern="[0-9]{6}"
+                                maxlength="6"
+                                inputmode="numeric"
+                                autocomplete="postal-code"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- PAYMENT METHOD -->
+
+                <div class="form-card">
+
+                    <div class="form-section-heading">
+                        <span class="step-number">03</span>
+                        <div>
+                            <h2>Payment Method</h2>
+                            <p>Choose your preferred payment option.</p>
+                        </div>
+                    </div>
+
+                    <div class="payment-option">
+
+                        <label class="payment-choice">
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="Cash on Delivery"
+                                checked
+                            >
+                            <span>
+                                <strong>Cash on Delivery</strong>
+                                <small>Pay when your order arrives.</small>
+                            </span>
+                        </label>
+
+                        <label class="payment-choice">
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="UPI"
+                            >
+                            <span>
+                                <strong>UPI</strong>
+                                <small>Demo selection only. No online payment is processed.</small>
+                            </span>
+                        </label>
+
+                        <label class="payment-choice">
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="Credit Payment"
+                            >
+                            <span>
+                                <strong>Credit Payment</strong>
+                                <small>Pay using the credit limit assigned to your account by VELORA.</small>
+                            </span>
+                        </label>
+
+                    </div>
+
+                    <!-- CREDIT DETAILS -->
+
+                    <div id="creditInfo" class="credit-info">
+
+                        <p>
+                            <span>Credit Limit</span>
+                            <strong id="creditLimit">₹0</strong>
+                        </p>
+
+                        <p>
+                            <span>Outstanding Credit</span>
+                            <strong id="outstandingCredit">₹0</strong>
+                        </p>
+
+                        <p>
+                            <span>Available Credit</span>
+                            <strong id="availableCredit">₹0</strong>
+                        </p>
+
+                        <p class="credit-note">
+                            Credit orders will remain unpaid until the VELORA
+                            administrator confirms payment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button type="submit" class="place-order-button">
+                    PLACE ORDER <span>→</span>
+                </button>
+
+                <p class="checkout-security-note">
+                    <span>◆</span>
+                    Your order details will be saved securely in our order database.
+                </p>
+
+            </form>
+
+        </section>
+
+        <!-- ORDER SUMMARY -->
+
+        <aside class="order-summary">
+
+            <div class="summary-heading">
+                <div>
+                    <p class="eyebrow">YOUR SELECTION</p>
+                    <h2>Your Order</h2>
+                </div>
+                <span class="summary-lock">SECURE</span>
+            </div>
+
+            <div id="checkoutItems" class="checkout-items">
+                Loading your order...
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="checkoutSubtotal">₹0</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Delivery</span>
+                <span>Calculated at checkout</span>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-row total-row">
+                <strong>Total</strong>
+                <strong id="checkoutTotal">₹0</strong>
+            </div>
+
+            <div class="summary-message">
+                Thank you for choosing VELORA. We appreciate your order.
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+        <div class="footer-logo">VELORA.</div>
+        <p class="footer-tagline">THE ART OF EVERYDAY LIVING</p>
+        <p>Thoughtfully selected. Beautifully delivered.</p>
+        <p>© 2026 VELORA. All rights reserved.</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/firebase-auth.js"></script>
+    <script src="../js/firestore.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script src="../js/checkout.js"></script>
+
+</body>
+</html>

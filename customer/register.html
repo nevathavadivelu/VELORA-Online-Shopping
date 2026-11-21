@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | VELORA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+
+    <a href="home.html" class="back-home">← Back to VELORA</a>
+
+    <main class="auth-wrapper">
+
+        <!-- Left visual panel -->
+        <section class="auth-visual register-visual">
+
+            <div class="visual-content">
+
+                <a href="home.html" class="visual-brand">VELORA.</a>
+
+                <p class="visual-eyebrow">
+                    A WORLD OF THOUGHTFUL FINDS
+                </p>
+
+                <h1>
+                    Make everyday moments beautiful.
+                </h1>
+
+                <p>
+                    Join us and explore a collection
+                    chosen with care and style.
+                </p>
+
+                <div class="visual-line"></div>
+
+                <span>VELORA · EST. 2026</span>
+
+            </div>
+
+        </section>
+
+        <!-- Registration form -->
+        <section class="auth-form-section">
+
+            <div class="auth-card register-card">
+
+                <a href="home.html" class="brand-logo">
+                    VELORA<span>.</span>
+                </a>
+
+                <p class="form-eyebrow">JOIN OUR COMMUNITY</p>
+
+                <h2>Create your account</h2>
+
+                <p class="form-description">
+                    Sign up to enjoy a more personal shopping experience.
+                </p>
+
+                <form id="registerForm">
+
+                    <div class="form-group">
+
+                        <label for="fullName">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="password">Password</label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            required
+                            minlength="6"
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">Confirm Password</label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Enter your password again"
+                            autocomplete="new-password"
+                            required
+                            minlength="6"
+                        >
+
+                    </div>
+
+                    <button type="submit" class="auth-button">
+
+                        <span>Create Account</span>
+
+                        <span>→</span>
+
+                    </button>
+
+                    <p
+                        id="message"
+                        class="auth-message"
+                        aria-live="polite">
+                    </p>
+
+                </form>
+
+                <div class="auth-divider">
+                    <span>ALREADY A MEMBER?</span>
+                </div>
+
+                <p class="switch-auth">
+                    Already have an account?
+                    <a href="login.html">Sign In</a>
+                </p>
+
+                <p class="secure-note">
+                    Your journey with VELORA begins here.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Existing Firebase REST API scripts -->
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/firebase-auth.js"></script>
+    <script src="../js/firestore.js"></script>
+    <script src="../js/register.js"></script>
+
+</body>
+</html>

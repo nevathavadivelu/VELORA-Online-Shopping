@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VELORA | The Art of Everyday Living</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+
+<body>
+
+    <!-- Announcement -->
+    <div class="announcement-bar">
+        COMPLIMENTARY SHIPPING ON SELECTED ORDERS
+        <span>✦</span>
+        DISCOVER THE VELORA COLLECTION
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <a href="home.html" class="logo">
+            <span class="logo-symbol">V</span>
+            <span class="logo-name">VELORA</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="home.html" class="active">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="dashboard.html">My Profile</a>
+            <a href="cart.html" class="cart-link">My Cart <span>↗</span></a>
+            <a href="#" id="logoutButton" class="logout-btn">Logout</a>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">WELCOME TO VELORA</p>
+
+                <h1>
+                    Welcome back,<br>
+                    <span>Beautifully.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover thoughtfully selected essentials
+                    that bring style, comfort and inspiration
+                    to your everyday living.
+                </p>
+
+                <a href="products.html" class="primary-button">
+                    EXPLORE THE COLLECTION <span>→</span>
+                </a>
+
+                <div class="hero-note">
+                    <span class="gold-line"></span>
+                    THE ART OF EVERYDAY LIVING
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img
+                    src="../assets/images/products/casual-shirt.jpg"
+                    alt="Velora featured fashion collection"
+                    onerror="this.src='../assets/images/products/tshirt.jpg'"
+                >
+
+                <div class="image-caption">
+                    <span>CURATED FOR YOU</span>
+                    <span>01 / VELORA</span>
+                </div>
+
+            </div>
+
+            <div class="hero-number">01</div>
+
+        </section>
+
+        <!-- Brand Message -->
+        <section class="brand-message">
+
+            <p>LESS ORDINARY. MORE YOU.</p>
+
+            <h2>Find beauty in the everyday.</h2>
+
+            <span>
+                Thoughtful finds. Timeless essentials. A little more joy.
+            </span>
+
+        </section>
+
+        <!-- Categories -->
+        <section class="categories-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">DISCOVER SOMETHING SPECIAL</p>
+                    <h2>Explore Our World</h2>
+                </div>
+
+                <a href="products.html" class="text-link">
+                    VIEW EVERYTHING →
+                </a>
+
+            </div>
+
+            <div class="category-grid">
+
+                <a href="products.html?category=Fashion" class="category-card">
+
+                    <div class="category-image fashion-image">
+                        <span>01</span>
+                    </div>
+
+                    <div class="category-details">
+                        <div>
+                            <h3>Fashion</h3>
+                            <p>Style that feels like you.</p>
+                        </div>
+                        <span class="category-arrow">↗</span>
+                    </div>
+
+                </a>
+
+                <a href="products.html?category=Home%20%26%20Living" class="category-card">
+
+                    <div class="category-image home-image">
+                        <span>02</span>
+                    </div>
+
+                    <div class="category-details">
+                        <div>
+                            <h3>Home & Living</h3>
+                            <p>Make every space special.</p>
+                        </div>
+                        <span class="category-arrow">↗</span>
+                    </div>
+
+                </a>
+
+                <a href="products.html?category=Technology" class="category-card">
+
+                    <div class="category-image tech-image">
+                        <span>03</span>
+                    </div>
+
+                    <div class="category-details">
+                        <div>
+                            <h3>Technology</h3>
+                            <p>Smart everyday essentials.</p>
+                        </div>
+                        <span class="category-arrow">↗</span>
+                    </div>
+
+                </a>
+
+                <a href="products.html?category=Books" class="category-card">
+
+                    <div class="category-image books-image">
+                        <span>04</span>
+                    </div>
+
+                    <div class="category-details">
+                        <div>
+                            <h3>Books</h3>
+                            <p>Inspiration on every page.</p>
+                        </div>
+                        <span class="category-arrow">↗</span>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Product Search -->
+        <section class="home-search-section">
+
+            <div>
+                <p class="eyebrow">FIND YOUR NEXT FAVOURITE</p>
+                <h2>What are you looking for?</h2>
+            </div>
+
+            <form id="homeSearchForm" class="home-search-form">
+
+                <input
+                    type="search"
+                    id="homeSearchInput"
+                    placeholder="Search products..."
+                    aria-label="Search products"
+                    required
+                >
+
+                <button type="submit">
+                    SEARCH →
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">THE VELORA EDIT</p>
+                    <h2>Selected for You</h2>
+
+                    <p class="section-description">
+                        A few favourites worth discovering.
+                    </p>
+                </div>
+
+                <a href="products.html" class="text-link">
+                    SHOP ALL PRODUCTS →
+                </a>
+
+            </div>
+
+            <div id="featuredProducts" class="featured-grid">
+
+                <p class="loading-message">
+                    Preparing your collection...
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Orders -->
+        <section class="orders-section">
+
+            <div class="orders-decoration">V</div>
+
+            <div class="orders-content">
+
+                <p class="eyebrow">YOUR VELORA ACCOUNT</p>
+
+                <h2>
+                    Your Shopping Journey,<br>
+                    All in One Place.
+                </h2>
+
+                <p>
+                    Keep track of your purchases and revisit
+                    your order details whenever you need them.
+                </p>
+
+                <a href="my-orders.html" class="light-button">
+                    VIEW MY ORDERS →
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Promo -->
+        <section class="promo-section">
+
+            <div class="promo-content">
+
+                <p class="eyebrow">A LITTLE SOMETHING BEAUTIFUL</p>
+
+                <h2>
+                    Everyday essentials.<br>
+                    Extraordinary feeling.
+                </h2>
+
+                <p>
+                    Explore a collection designed to make
+                    your everyday moments feel special.
+                </p>
+
+                <a href="products.html" class="primary-button">
+                    SHOP THE COLLECTION →
+                </a>
+
+            </div>
+
+            <div class="promo-side">
+                <span>V</span>
+                <p>THE ART OF EVERYDAY LIVING</p>
+            </div>
+
+        </section>
+
+        <!-- Benefits -->
+        <section class="benefits-section">
+
+            <div class="benefit-card">
+                <span>✧</span>
+                <h3>Thoughtful Selection</h3>
+                <p>Products chosen with care.</p>
+            </div>
+
+            <div class="benefit-card">
+                <span>◇</span>
+                <h3>Easy Shopping</h3>
+                <p>A simple shopping experience.</p>
+            </div>
+
+            <div class="benefit-card">
+                <span>♡</span>
+                <h3>Customer First</h3>
+                <p>Your experience matters to us.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-top">
+
+            <div>
+                <a href="home.html" class="footer-logo">VELORA.</a>
+                <p>THE ART OF EVERYDAY LIVING</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="home.html">Home</a>
+                <a href="products.html">Shop</a>
+                <a href="my-orders.html">My Orders</a>
+                <a href="dashboard.html">My Profile</a>
+                <a href="cart.html">My Cart</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 VELORA. All rights reserved.</span>
+            <span>MADE FOR EVERYDAY LIVING.</span>
+        </div>
+
+    </footer>
+
+    <!-- Existing Firebase REST API -->
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/firestore.js"></script>
+    <script src="../js/home.js"></script>
+
+</body>
+</html>

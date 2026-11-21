@@ -1,0 +1,147 @@
+
+/* General page styling */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f6fa;
+    color: #333;
+}
+
+/* Main shopping container */
+.register-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+}
+
+/* Page heading */
+h1 {
+    text-align: center;
+    color: #263b80;
+}
+
+h2 {
+    color: #263b80;
+}
+
+/* Product grid */
+#productList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* Individual product card */
+.product-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Product image */
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+/* Product name */
+.product-card h3 {
+    color: #263b80;
+    min-height: 40px;
+}
+
+/* Product details */
+.product-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Product price */
+.product-price {
+    color: #16803c !important;
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+/* Category label */
+.product-category {
+    display: inline-block;
+    background-color: #e9edff;
+    color: #263b80;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* Stock information */
+.product-stock {
+    color: #16803c !important;
+    font-weight: bold;
+}
+
+/* Add to cart button */
+.add-to-cart {
+    width: 100%;
+    padding: 11px;
+    margin-top: 10px;
+    background-color: #263b80;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.add-to-cart:hover {
+    background-color: #18295f;
+}
+
+/* Back and logout */
+.page-link {
+    color: #263b80;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.page-link:hover {
+    text-decoration: underline;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .register-container {
+        padding: 15px;
+    }
+
+    #productList {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-card img {
+        height: 120px;
+    }
+}

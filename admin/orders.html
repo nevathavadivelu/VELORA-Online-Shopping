@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Management | VELORA Admin</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/admin-orders.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- HEADER -->
+        <header class="admin-header">
+
+            <div class="brand">
+                <h1>VELORA</h1>
+                <span>THE ART OF EVERYDAY LIVING</span>
+            </div>
+
+            
+<nav class="admin-nav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="products.html">Products</a>
+    <a href="categories.html">Categories</a>
+    <a href="orders.html" class="active">Orders</a>
+    <a href="customers.html">Customers</a>
+    <a href="reports.html">Reports</a>
+    <script src="../js/admin-logout.js"></script>
+</nav>
+
+
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="admin-main">
+
+            <!-- PAGE HEADING -->
+            <section class="page-heading">
+
+                <div>
+                    <p class="eyebrow">STORE MANAGEMENT</p>
+
+                    <h2>Customer Orders</h2>
+
+                    <p class="page-description">
+                        View and manage customer orders placed through VELORA.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    id="refreshOrders"
+                    class="refresh-btn">
+
+                    ↻ Refresh Orders
+
+                </button>
+
+            </section>
+
+
+            <!-- ORDER STATISTICS -->
+            <section class="order-stats">
+
+                <div class="stat-card">
+                    <p>Total Orders</p>
+                    <h3 id="totalOrders">0</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>Pending Orders</p>
+                    <h3 id="pendingOrders">0</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>Processing Orders</p>
+                    <h3 id="processingOrders">0</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>Delivered Orders</p>
+                    <h3 id="deliveredOrders">0</h3>
+                </div>
+
+            </section>
+
+
+            <!-- ORDER DETAILS MODAL -->
+            <div
+                id="orderDetailsModal"
+                class="order-modal">
+
+                <div class="order-modal-content">
+
+                    <div class="order-modal-header">
+
+                        <div>
+                            <p class="eyebrow">VELORA ORDER SUMMARY</p>
+                            <h2>Order Details</h2>
+                        </div>
+
+                        <button
+                            type="button"
+                            id="closeOrderModal"
+                            class="close-modal-btn"
+                            aria-label="Close order details">
+
+                            &times;
+
+                        </button>
+
+                    </div>
+
+                    <div id="orderDetailsContent">
+
+                        <p>Order information will appear here.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ORDERS PANEL -->
+            <section class="orders-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <h3>All Orders</h3>
+
+                        <p>
+                            Manage your store's customer purchases.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="ordersList">
+
+                    <p class="loading-message">
+                        Loading customer orders...
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="admin-footer">
+
+            <p>
+                © 2026 VELORA. Admin Management Panel.
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- FIREBASE SCRIPTS -->
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/firebase-auth.js"></script>
+    <script src="../js/firestore.js"></script>
+    <script src="../js/admin-orders.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Management | VELORA Admin</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/admin-customers.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+       
+<header class="admin-header">
+
+    <div class="brand">
+        <h1>VELORA</h1>
+        <span>THE ART OF EVERYDAY LIVING</span>
+    </div>
+
+    <nav class="admin-nav">
+
+        <a href="dashboard.html">Dashboard</a>
+
+        <a href="products.html">Products</a>
+
+        <a href="categories.html">Categories</a>
+
+        <a href="orders.html">Orders</a>
+
+        <a href="customers.html" class="active">Customers</a>
+
+        <a href="reports.html">Reports</a>
+<script src="../js/admin-logout.js"></script>
+    </nav>
+
+</header>
+
+
+        <main class="admin-main">
+
+            <section class="page-heading">
+
+                <div>
+                    <p class="eyebrow">STORE MANAGEMENT</p>
+
+                    <h2>Customer Management</h2>
+
+                    <p class="page-description">
+                        View your registered customers and their purchase history.
+                    </p>
+                </div>
+
+                <button type="button" id="refreshCustomers" class="refresh-btn">
+                    ↻ Refresh Customers
+                </button>
+
+            </section>
+
+
+            <!-- CUSTOMER STATISTICS -->
+            <section class="customer-stats">
+
+                <div class="stat-card">
+                    <p>Total Customers</p>
+                    <h3 id="totalCustomers">0</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>Customers with Orders</p>
+                    <h3 id="customersWithOrders">0</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>Total Customer Orders</p>
+                    <h3 id="totalCustomerOrders">0</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>Total Customer Spending</p>
+                    <h3 id="totalCustomerSpending">₹0.00</h3>
+                </div>
+
+            </section>
+
+
+            <!-- CUSTOMER LIST -->
+            <section class="customers-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <h3>Registered Customers</h3>
+                        <p>Browse and manage customer information.</p>
+                    </div>
+                </div>
+
+                <div id="customersList">
+                    <p class="loading-message">Loading customers...</p>
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <footer class="admin-footer">
+            <p>© 2026 VELORA. Admin Management Panel.</p>
+        </footer>
+
+    </div>
+
+
+    <!-- CUSTOMER DETAILS MODAL -->
+    <div id="customerDetailsModal" class="customer-modal">
+
+        <div class="customer-modal-content">
+
+            <div class="customer-modal-header">
+
+                <div>
+                    <p class="eyebrow">VELORA CUSTOMER PROFILE</p>
+                    <h2>Customer Details</h2>
+                </div>
+
+                <button
+                    type="button"
+                    id="closeCustomerModal"
+                    class="close-modal-btn"
+                    aria-label="Close customer details">
+                    &times;
+                </button>
+
+            </div>
+
+            <div id="customerDetailsContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FIREBASE SCRIPTS -->
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/firebase-auth.js"></script>
+    <script src="../js/firestore.js"></script>
+    <script src="../js/admin-customers.js"></script>
+
+</body>
+</html>

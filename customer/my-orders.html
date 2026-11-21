@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders | VELORA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/my-orders.css">
+
+</head>
+
+<body>
+
+    <div class="announcement-bar">
+        THE ART OF EVERYDAY LIVING
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+
+        <a href="home.html" class="logo">VELORA<span>.</span></a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="home.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="my-orders.html" class="active">My Orders</a>
+            <a href="dashboard.html">My Profile</a>
+            <a href="cart.html">My Cart</a>
+            <a href="#" id="logoutButton">Logout</a>
+        </nav>
+
+    </header>
+
+    <main class="orders-container">
+
+        <!-- BREADCRUMB -->
+        <div class="breadcrumb">
+            <a href="home.html">Home</a>
+            <span>/</span>
+            <span>My Orders</span>
+        </div>
+
+        <!-- PAGE HEADING -->
+        <section class="orders-heading">
+
+            <p class="eyebrow">YOUR SHOPPING JOURNEY</p>
+
+            <h1>My Orders</h1>
+
+            <p>
+                Every purchase has a story. Explore your order history
+                and keep track of your VELORA purchases.
+            </p>
+
+        </section>
+
+        <!-- ORDER STATISTICS -->
+        <section class="order-statistics">
+
+            <div class="stat-card">
+                <div class="stat-icon">▤</div>
+                <div>
+                    <span>Total Orders</span>
+                    <h2 id="totalOrders">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">₹</div>
+                <div>
+                    <span>Total Spent</span>
+                    <h2 id="totalSpent">₹0.00</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">◷</div>
+                <div>
+                    <span>Latest Order</span>
+                    <h2 id="latestOrderDate">--</h2>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CUSTOMER CREDIT DASHBOARD -->
+        <section class="credit-dashboard">
+
+            <div class="credit-heading">
+
+                <p class="eyebrow">YOUR VELORA ACCOUNT</p>
+
+                <h2>Credit Overview</h2>
+
+                <p>
+                    Keep track of your credit purchases and available balance.
+                </p>
+
+            </div>
+
+            <div class="credit-statistics">
+
+                <div class="credit-stat-card">
+                    <span>Credit Limit</span>
+                    <h2 id="customerCreditLimit">₹0.00</h2>
+                </div>
+
+                <div class="credit-stat-card">
+                    <span>Outstanding Credit</span>
+                    <h2 id="customerOutstandingCredit">₹0.00</h2>
+                </div>
+
+                <div class="credit-stat-card">
+                    <span>Available Credit</span>
+                    <h2 id="customerAvailableCredit">₹0.00</h2>
+                </div>
+
+            </div>
+
+            <!-- CREDIT PURCHASE HISTORY -->
+            <div class="credit-history">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="eyebrow">CREDIT TRANSACTIONS</p>
+                        <h2>Your Credit Purchases</h2>
+                    </div>
+
+                </div>
+
+                <div id="creditOrdersList">
+
+                    <p class="credit-loading">
+                        Loading credit purchases...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- NORMAL ORDER HISTORY -->
+        <section class="orders-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">ORDER HISTORY</p>
+                    <h2>Your Purchases</h2>
+                </div>
+
+                <a href="products.html" class="continue-shopping">
+                    Continue Shopping →
+                </a>
+
+            </div>
+
+            <div id="ordersList">
+
+                <div class="loading-message">
+                    <div class="loader"></div>
+                    <p>Loading your orders...</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <a href="home.html" class="footer-logo">VELORA.</a>
+
+        <p>THE ART OF EVERYDAY LIVING</p>
+
+        <span>© 2026 VELORA. All rights reserved.</span>
+
+    </footer>
+
+    <!-- FIREBASE SCRIPTS -->
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/firestore.js"></script>
+    <script src="../js/my-orders.js"></script>
+
+</body>
+</html>

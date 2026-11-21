@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VELORA | Product Management</title>
+
+    <link rel="stylesheet" href="../css/admin-products.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <a href="dashboard.html" class="brand">
+                VELORA<span>.</span>
+            </a>
+
+            <p class="sidebar-label">ADMINISTRATION</p>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-link">
+                    <span>▦</span> Dashboard
+                </a>
+
+                <a href="products.html" class="nav-link active">
+                    <span>◇</span> Products
+                </a>
+
+                <a href="categories.html" class="nav-link">
+                    <span>▤</span> Categories
+                </a>
+
+                <a href="orders.html" class="nav-link">
+                    <span>▣</span> Orders
+                </a>
+
+                <a href="customers.html" class="nav-link">
+                    <span>♙</span> Customers
+                </a>
+
+                <a href="reports.html" class="nav-link">
+                    <span>▥</span> Reports
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="../customer/home.html" class="store-link">
+                    ← View Store
+                </a>
+
+                <button type="button" class="logout-button" id="adminLogout">
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <p class="eyebrow">INVENTORY MANAGEMENT</p>
+
+                    <h1>Product Management</h1>
+
+                    <p class="page-description">
+                        Manage your products, stock, prices and availability.
+                    </p>
+                </div>
+
+                <button type="button" class="primary-button" id="addProductButton">
+                    + Add New Product
+                </button>
+
+            </header>
+
+
+            <!-- STATISTICS -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <p>Total Products</p>
+                    <h2 id="productTotal">0</h2>
+                    <span>All inventory products</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Active Products</p>
+                    <h2 id="activeProductTotal">0</h2>
+                    <span>Currently active</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Out of Stock</p>
+                    <h2 id="outOfStockTotal">0</h2>
+                    <span>Products with zero stock</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Low Stock</p>
+                    <h2 id="lowStockTotal">0</h2>
+                    <span>Products with stock from 1 to 5</span>
+                </div>
+
+            </section>
+
+
+            <!-- ADD / EDIT PRODUCT FORM -->
+            <section class="form-section" id="productFormSection">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="eyebrow">PRODUCT DETAILS</p>
+                        <h2 id="formTitle">Add New Product</h2>
+                    </div>
+
+                    <button type="button" class="close-button" id="closeProductForm">
+                        ✕
+                    </button>
+
+                </div>
+
+
+                <form id="productForm">
+
+                    <input type="hidden" id="editingProductId">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="productName">Product Name</label>
+
+                            <input
+                                type="text"
+                                id="productName"
+                                placeholder="Enter product name"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="productCategory">Category</label>
+
+                            <select id="productCategory" required>
+                                <option value="">Select Category</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="productPrice">Price (₹)</label>
+
+                            <input
+                                type="number"
+                                id="productPrice"
+                                min="0"
+                                step="0.01"
+                                placeholder="Enter price"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="productStock">Stock Quantity</label>
+
+                            <input
+                                type="number"
+                                id="productStock"
+                                min="0"
+                                step="1"
+                                placeholder="Enter stock quantity"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group full-width">
+                            <label for="productImage">Product Image Path / URL</label>
+
+                            <input
+                                type="text"
+                                id="productImage"
+                                placeholder="../assets/images/products/product.jpg"
+                                required
+                            >
+
+                            <small>
+                                Enter the image path or image URL.
+                            </small>
+                        </div>
+
+
+                        <div class="form-group full-width">
+                            <label for="productDescription">Description</label>
+
+                            <textarea
+                                id="productDescription"
+                                rows="4"
+                                placeholder="Enter product description"
+                                required
+                            ></textarea>
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label class="checkbox-label">
+
+                                <input
+                                    type="checkbox"
+                                    id="productActive"
+                                    checked
+                                >
+
+                                Product is active
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="cancelProductForm"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                            id="saveProductButton"
+                        >
+                            Save Product
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- PRODUCT LIST -->
+            <section class="product-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="eyebrow">YOUR INVENTORY</p>
+                        <h2>All Products</h2>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="refreshProducts"
+                    >
+                        ↻ Refresh
+                    </button>
+
+                </div>
+
+
+                <!-- SEARCH AND FILTERS -->
+                <div class="toolbar">
+
+                    <input
+                        type="search"
+                        id="productSearch"
+                        placeholder="Search products..."
+                    >
+
+                    <select id="productCategoryFilter">
+                        <option value="">All Categories</option>
+                    </select>
+
+                    <select id="productStatusFilter">
+                        <option value="">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="out">Out of Stock</option>
+                    </select>
+
+                </div>
+
+
+                <!-- PRODUCT TABLE -->
+                <div class="table-wrapper">
+
+                    <table class="product-table">
+
+                        <thead>
+                            <tr>
+                                <th>PRODUCT</th>
+                                <th>CATEGORY</th>
+                                <th>PRICE</th>
+                                <th>STOCK</th>
+                                <th>STATUS</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="adminProductList">
+
+                            <tr>
+                                <td colspan="6" class="loading-cell">
+                                    Loading products...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+                <div id="productPagination" class="pagination-container"></div>
+
+
+                <!-- MESSAGE -->
+                <p class="message" id="productMessage"></p>
+
+            </section>
+
+
+            <footer class="footer">
+                VELORA · THE ART OF EVERYDAY LIVING
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- FIREBASE SCRIPTS -->
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/firestore.js"></script>
+
+    <!-- JQUERY LIBRARY -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- PRODUCT MANAGEMENT -->
+    <script src="../js/admin-products.js"></script>
+    <script src="../js/admin-logout.js"></script>
+
+</body>
+
+</html>

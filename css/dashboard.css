@@ -1,0 +1,633 @@
+
+/* ==========================================
+   VELORA - CUSTOMER PROFILE DASHBOARD
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f8f7f2;
+    color: #263b32;
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.navbar {
+    min-height: 78px;
+    padding: 18px 7%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #203b30;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #c29b55;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555f58;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #bd9653;
+}
+
+/* ==========================================
+   PROFILE PAGE
+========================================== */
+
+.profile-page {
+    max-width: 1150px;
+    margin: 65px auto;
+    padding: 0 25px;
+}
+
+.welcome-section {
+    margin-bottom: 35px;
+}
+
+.eyebrow {
+    color: #b18a4d;
+    letter-spacing: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.welcome-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 43px;
+    margin-bottom: 12px;
+    color: #203b30;
+}
+
+.welcome-section > p:last-child {
+    color: #788078;
+    font-size: 15px;
+}
+
+/* ==========================================
+   PROFILE LAYOUT
+========================================== */
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.profile-sidebar,
+.profile-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 8px 30px rgba(32,59,48,0.06);
+}
+
+.profile-sidebar {
+    text-align: center;
+}
+
+/* ==========================================
+   PROFILE AVATAR
+========================================== */
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e9eee7;
+    color: #254535;
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    border: 3px solid #d7c49d;
+}
+
+.profile-sidebar h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+.profile-sidebar p {
+    color: #858c85;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.member-label {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 9px 15px;
+    border-radius: 20px;
+    background: #f5f0e6;
+    color: #98743d;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ==========================================
+   ACCOUNT STATUS
+========================================== */
+
+.profile-account-status {
+    margin-top: 20px;
+    color: #315747;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.account-status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4b9b70;
+    margin-right: 6px;
+}
+
+/* ==========================================
+   PROFILE CARD
+========================================== */
+
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.card-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+}
+
+.status {
+    background: #e9f3e9;
+    color: #47734e;
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* ==========================================
+   PROFILE FORM
+========================================== */
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #405147;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e2e5df;
+    border-radius: 8px;
+    background: #fdfdfb;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    color: #263b32;
+}
+
+.form-group input:focus {
+    border-color: #b18a4d;
+}
+
+.form-group input[readonly] {
+    background: #f2f3ef;
+    color: #858c85;
+    cursor: not-allowed;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 7px;
+    color: #929992;
+    font-size: 11px;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #254535;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #172e23;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   FORM MESSAGES
+========================================== */
+
+.message {
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.message.success {
+    color: #397a45;
+}
+
+.message.error {
+    color: #bd4545;
+}
+
+/* ==========================================
+   ACCOUNT SUMMARY
+========================================== */
+
+.account-summary,
+.recent-orders-section {
+    margin-top: 55px;
+}
+
+.dashboard-section-heading {
+    margin-bottom: 24px;
+}
+
+.dashboard-section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    color: #193d32;
+    font-size: 28px;
+    margin: 8px 0;
+}
+
+.account-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.summary-card {
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #e8e5dc;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(32,59,48,0.04);
+    transition: 0.2s ease;
+}
+
+.summary-card:hover {
+    border-color: #193d32;
+    transform: translateY(-3px);
+}
+
+.summary-card span {
+    color: #777;
+    font-size: 13px;
+}
+
+.summary-card h2 {
+    font-family: 'Playfair Display', serif;
+    color: #193d32;
+    font-size: 25px;
+    margin: 12px 0 8px;
+    overflow-wrap: anywhere;
+}
+
+.summary-card p {
+    color: #999;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* ==========================================
+   RECENT ORDERS
+========================================== */
+
+.recent-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.view-all-orders {
+    color: #193d32;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.view-all-orders:hover {
+    color: #c5a46d;
+}
+
+.recent-order-card {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid #e8e5dc;
+    border-radius: 12px;
+    margin-bottom: 14px;
+}
+
+.recent-order-info h3 {
+    font-size: 15px;
+    color: #193d32;
+    margin: 0 0 7px;
+    overflow-wrap: anywhere;
+}
+
+.recent-order-info p {
+    color: #888;
+    font-size: 12px;
+    margin: 0;
+}
+
+.recent-order-payment,
+.recent-order-status {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.recent-order-payment span,
+.recent-order-status > span {
+    color: #888;
+    font-size: 11px;
+}
+
+.recent-order-payment strong {
+    color: #193d32;
+    font-size: 12px;
+}
+
+.recent-order-payment small {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.recent-order-status {
+    align-items: flex-end;
+}
+
+.recent-order-status > strong {
+    color: #193d32;
+    font-size: 16px;
+}
+
+/* ==========================================
+   ORDER STATUS
+========================================== */
+
+.profile-order-status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px !important;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.profile-placed,
+.profile-pending {
+    background: #fff3d9;
+    color: #966b18 !important;
+}
+
+.profile-processing {
+    background: #e9efff;
+    color: #4263a5 !important;
+}
+
+.profile-shipped {
+    background: #e9f2ff;
+    color: #2865a5 !important;
+}
+
+.profile-delivered {
+    background: #e5f4e9;
+    color: #23734c !important;
+}
+
+.profile-cancelled {
+    background: #fce8e8;
+    color: #b42318 !important;
+}
+
+.profile-paid {
+    color: #23734c;
+}
+
+.profile-unpaid {
+    color: #b7791f;
+}
+
+/* ==========================================
+   EMPTY AND LOADING STATES
+========================================== */
+
+.recent-orders-empty,
+.recent-orders-loading,
+.recent-orders-error {
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+    color: #777;
+}
+
+.recent-orders-empty h3 {
+    font-family: 'Playfair Display', serif;
+    color: #193d32;
+    margin-bottom: 10px;
+}
+
+.recent-orders-empty p {
+    font-size: 13px;
+}
+
+.recent-orders-empty a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: #193d32;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+.recent-orders-error {
+    color: #b42318;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.profile-footer {
+    text-align: center;
+    padding: 35px 20px;
+    background: #193d32;
+    color: #fff;
+    margin-top: 70px;
+}
+
+.footer-logo {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+.profile-footer p {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin: 10px 0;
+}
+
+.profile-footer span {
+    color: #c7d0ca;
+    font-size: 11px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .account-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recent-order-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .recent-order-status {
+        align-items: flex-start;
+    }
+
+    .welcome-section h1 {
+        font-size: 35px;
+    }
+
+    .card-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .account-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recent-order-card {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .recent-order-status {
+        align-items: flex-start;
+    }
+
+    .recent-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .summary-card h2 {
+        font-size: 23px;
+    }
+
+    .profile-sidebar,
+    .profile-card {
+        padding: 25px;
+    }
+
+    .welcome-section h1 {
+        font-size: 32px;
+    }
+
+}

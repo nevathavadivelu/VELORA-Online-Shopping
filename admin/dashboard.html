@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | VELORA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <a href="dashboard.html" class="brand">
+            VELORA<span>.</span>
+        </a>
+
+        <p class="sidebar-label">ADMINISTRATION</p>
+
+      
+<nav class="sidebar-nav">
+
+    <a href="dashboard.html" class="active">▦ &nbsp; Dashboard</a>
+
+    <a href="products.html">◇ &nbsp; Products</a>
+
+    <a href="categories.html">◈ &nbsp; Categories</a>
+
+    <a href="orders.html">▤ &nbsp; Orders</a>
+
+    <a href="customers.html">♙ &nbsp; Customers</a>
+
+    <a href="reports.html">▥ &nbsp; Reports</a>
+<script src="../js/admin-logout.js"></script>
+</nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="../customer/home.html">← Customer Store</a>
+
+            <button id="adminLogout">Logout ↗</button>
+
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <p class="eyebrow">STORE MANAGEMENT</p>
+                <h1>Dashboard</h1>
+            </div>
+
+            <div class="admin-profile">
+
+                <span class="admin-avatar">V</span>
+
+                <div>
+                    <strong>Store Administrator</strong>
+                    <small>VELORA Admin</small>
+                </div>
+
+            </div>
+
+        </header>
+
+        <section class="welcome-section">
+
+            <div>
+                <p class="eyebrow">WELCOME BACK</p>
+
+                <h2>Your store at a glance.</h2>
+
+                <p>Monitor your products, orders and store performance.</p>
+            </div>
+
+            <span class="welcome-mark">V.</span>
+
+        </section>
+
+        <!-- MAIN STATISTICS -->
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <span class="stat-icon">◇</span>
+                <p>Total Products</p>
+                <h3 id="totalProducts">—</h3>
+                <small>Products in catalogue</small>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-icon">▤</span>
+                <p>Total Orders</p>
+                <h3 id="totalOrders">—</h3>
+                <small>Orders received</small>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-icon">♙</span>
+                <p>Customers with Orders</p>
+                <h3 id="totalCustomers">—</h3>
+                <small>Unique customers</small>
+            </article>
+
+            <article class="stat-card revenue-card">
+                <span class="stat-icon">₹</span>
+                <p>Total Order Value</p>
+                <h3 id="totalRevenue">—</h3>
+                <small>Excluding cancelled orders</small>
+            </article>
+
+        </section>
+
+        <!-- SALES OVERVIEW -->
+
+        <section class="dashboard-panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <p class="eyebrow">BUSINESS PERFORMANCE</p>
+                    <h2>Sales Overview</h2>
+                    <p class="panel-description">
+                        Monthly revenue and order performance
+                    </p>
+                </div>
+
+                <span class="period-label">LAST 6 MONTHS</span>
+
+            </div>
+
+            <div class="chart-container">
+                <canvas id="salesChart"></canvas>
+            </div>
+
+        </section>
+
+        <!-- PRODUCT AND STOCK ANALYSIS -->
+
+        <section class="dashboard-two-column">
+
+            <div class="dashboard-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <p class="eyebrow">PRODUCT PERFORMANCE</p>
+                        <h2>Best-Selling Products</h2>
+                    </div>
+
+                </div>
+
+                <div id="bestSellingProducts" class="dashboard-list">
+
+                    <p class="loading-text">Loading products...</p>
+
+                </div>
+
+            </div>
+
+            <div class="dashboard-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <p class="eyebrow">INVENTORY MONITOR</p>
+                        <h2>Low-Stock Alerts</h2>
+                    </div>
+
+                </div>
+
+                <div id="lowStockProducts" class="dashboard-list">
+
+                    <p class="loading-text">Checking stock...</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- RECENT CUSTOMERS -->
+
+        <section class="dashboard-panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <p class="eyebrow">CUSTOMER ACTIVITY</p>
+                    <h2>Recent Registrations</h2>
+                </div>
+
+                <a href="customers.html" class="view-all">
+                    VIEW CUSTOMERS →
+                </a>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>CUSTOMER NAME</th>
+                            <th>EMAIL</th>
+                            <th>JOINED DATE</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="recentCustomers">
+
+                        <tr>
+                            <td colspan="3">Loading customers...</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- RECENT ORDERS -->
+
+        <section class="dashboard-panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <p class="eyebrow">LATEST ACTIVITY</p>
+                    <h2>Recent Orders</h2>
+                </div>
+
+                <a href="orders.html" class="view-all">
+                    VIEW ALL ORDERS →
+                </a>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ORDER ID</th>
+                            <th>CUSTOMER</th>
+                            <th>ORDER VALUE</th>
+                            <th>PAYMENT</th>
+                            <th>DATE</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="recentOrders">
+
+                        <tr>
+                            <td colspan="5">Loading recent orders...</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <p id="dashboardMessage"
+           class="dashboard-message"
+           aria-live="polite"></p>
+
+        <footer class="dashboard-footer">
+
+            © 2026 VELORA. THE ART OF EVERYDAY LIVING.
+
+        </footer>
+
+    </main>
+
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/firebase-auth.js"></script>
+    <script src="../js/firestore.js"></script>
+
+    <!-- Chart.js for the sales chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="../js/admin-dashboard.js"></script>
+
+</body>
+
+</html>

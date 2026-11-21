@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports & Analytics | VELORA Admin</title>
+
+    <link rel="stylesheet" href="../css/admin-reports.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <h1>VELORA</h1>
+            <p>THE ART OF EVERYDAY LIVING</p>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="products.html">Products</a>
+            <a href="categories.html">Categories</a>
+            <a href="orders.html">Orders</a>
+            <a href="customers.html">Customers</a>
+            <a href="reports.html" class="active">Reports</a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button type="button" id="logoutButton">
+                Sign Out
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <header class="top-header">
+
+            <div>
+                <p class="eyebrow">VELORA ADMINISTRATION</p>
+                <h2>Reports & Analytics</h2>
+            </div>
+
+            <div class="admin-profile">
+                <span class="profile-avatar">V</span>
+                <span>Administrator</span>
+            </div>
+
+        </header>
+
+
+        <!-- PAGE INTRODUCTION -->
+
+        <section class="page-intro">
+
+            <div>
+                <p class="eyebrow">BUSINESS INSIGHTS</p>
+
+                <h1>Reports Overview</h1>
+
+                <p>
+                    Monitor sales, inventory, orders and customer
+                    performance from one place.
+                </p>
+            </div>
+
+            <button type="button" id="refreshReports" class="refresh-button">
+                Refresh Reports
+            </button>
+
+        </section>
+
+
+        <!-- DATE FILTERS -->
+
+        <section class="report-filter-panel">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">REPORT PERIOD</p>
+                    <h3>Select Date Range</h3>
+                </div>
+            </div>
+
+            <div class="filter-controls">
+
+                <div class="filter-group">
+
+                    <label for="reportPeriod">Quick Filter</label>
+
+                    <select id="reportPeriod">
+
+                        <option value="today">Today</option>
+                        <option value="7days">Last 7 Days</option>
+                        <option value="30days" selected>Last 30 Days</option>
+                        <option value="all">All Time</option>
+                        <option value="custom">Custom Range</option>
+
+                    </select>
+
+                </div>
+
+                <div class="filter-group">
+
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate">
+
+                </div>
+
+                <div class="filter-group">
+
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate">
+
+                </div>
+
+                <button type="button" id="applyDateFilter" class="apply-button">
+                    Apply Filter
+                </button>
+
+            </div>
+
+            <p id="filterMessage" class="filter-message"></p>
+
+        </section>
+
+
+        <!-- SALES SUMMARY -->
+
+        <section class="report-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">FINANCIAL PERFORMANCE</p>
+                    <h3>Sales Summary</h3>
+                </div>
+            </div>
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+                    <p>Total Revenue</p>
+                    <h2 id="reportRevenue">₹0.00</h2>
+                    <span>Excluding cancelled orders</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Total Orders</p>
+                    <h2 id="reportOrders">0</h2>
+                    <span>Orders in selected period</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Average Order Value</p>
+                    <h2 id="averageOrderValue">₹0.00</h2>
+                    <span>Revenue per non-cancelled order</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Units Sold</p>
+                    <h2 id="reportUnitsSold">0</h2>
+                    <span>Across non-cancelled orders</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDER STATUS REPORT -->
+
+        <section class="report-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">ORDER MANAGEMENT</p>
+                    <h3>Order Status Report</h3>
+                </div>
+            </div>
+
+            <div class="report-table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Order Status</th>
+                            <th>Number of Orders</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="orderStatusReport">
+                        <tr>
+                            <td colspan="3">Loading report...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCT PERFORMANCE -->
+
+        <section class="report-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">PRODUCT PERFORMANCE</p>
+                    <h3>Best-Selling Products</h3>
+                </div>
+            </div>
+
+            <div class="report-table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Product</th>
+                            <th>Units Sold</th>
+                            <th>Sales Value</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="productPerformanceReport">
+                        <tr>
+                            <td colspan="4">Loading report...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- TOP 10 CUSTOMERS -->
+
+        <section class="report-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">CUSTOMER INSIGHTS</p>
+                    <h3>Top 10 Customers</h3>
+                </div>
+            </div>
+
+            <div class="report-table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Email</th>
+                            <th>Orders</th>
+                            <th>Total Spending</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="customerPerformanceReport">
+                        <tr>
+                            <td colspan="4">Loading report...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- CUSTOMER REPORTS -->
+
+        <section class="report-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">CUSTOMER MANAGEMENT</p>
+                    <h3>Customer Reports</h3>
+                </div>
+            </div>
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+                    <p>Total Registered Customers</p>
+                    <h2 id="customerReportCount">0</h2>
+                    <span>All registered customers</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Cash Purchase Revenue</p>
+                    <h2 id="cashCustomerRevenue">₹0.00</h2>
+                    <span>Selected date range</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Credit Purchase Revenue</p>
+                    <h2 id="creditCustomerRevenue">₹0.00</h2>
+                    <span>Selected date range</span>
+                </div>
+
+            </div>
+
+            <h4 class="report-subheading">All Registered Customers</h4>
+
+            <div class="report-table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Customer Name</th>
+                            <th>Email</th>
+                            <th>Credit Limit</th>
+                            <th>Registration Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="allCustomersReport">
+                        <tr>
+                            <td colspan="5">Loading customers...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <h4 class="report-subheading">Cash Purchases</h4>
+
+            <div class="report-table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Payment Method</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="cashPurchaseReport">
+                        <tr>
+                            <td colspan="5">Loading cash purchases...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <h4 class="report-subheading">Credit Purchases</h4>
+
+            <div class="report-table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Payment Status</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="creditPurchaseReport">
+                        <tr>
+                            <td colspan="5">Loading credit purchases...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- INVENTORY REPORTS -->
+
+        <section class="report-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">INVENTORY MANAGEMENT</p>
+                    <h3>Inventory Reports</h3>
+                </div>
+            </div>
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+                    <p>Total Products</p>
+                    <h2 id="inventoryProductCount">0</h2>
+                    <span>Products in catalogue</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Total Available Stock</p>
+                    <h2 id="inventoryTotalStock">0</h2>
+                    <span>Units in inventory</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>High Stock Products</p>
+                    <h2 id="highStockCount">0</h2>
+                    <span>Stock above 100</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Low Stock Products</p>
+                    <h2 id="lowStockCount">0</h2>
+                    <span>Stock below 15</span>
+                </div>
+
+            </div>
+
+
+            <div class="filter-group inventory-category-filter">
+
+                <label for="inventoryCategoryFilter">
+                    Filter Inventory by Category
+                </label>
+
+                <select id="inventoryCategoryFilter">
+                    <option value="all">All Categories</option>
+                </select>
+
+            </div>
+
+
+            <h4 class="report-subheading">Current Inventory</h4>
+
+            <div class="report-table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Quantity in Stock</th>
+                            <th>Unit Price</th>
+                            <th>Stock Value</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="allInventoryReport">
+                        <tr>
+                            <td colspan="6">Loading inventory...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <h4 class="report-subheading">High Stock Products – Above 100</h4>
+
+            <div class="report-table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="highStockReport">
+                        <tr>
+                            <td colspan="3">Loading high stock products...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <h4 class="report-subheading">Low Stock Products – Below 15</h4>
+
+            <div class="report-table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="lowStockReport">
+                        <tr>
+                            <td colspan="3">Loading low stock products...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- SALES REPORTS -->
+
+        <section class="report-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">SALES ANALYSIS</p>
+                    <h3>Sales Reports</h3>
+                </div>
+            </div>
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+                    <p>Cash Sales</p>
+                    <h2 id="cashSalesRevenue">₹0.00</h2>
+                    <span>Selected date range</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Credit Sales</p>
+                    <h2 id="creditSalesRevenue">₹0.00</h2>
+                    <span>Selected date range</span>
+                </div>
+
+                <div class="summary-card">
+                    <p>Credit Orders Unpaid</p>
+                    <h2 id="unpaidCreditOrders">0</h2>
+                    <span>Non-cancelled orders</span>
+                </div>
+
+            </div>
+
+
+            <h4 class="report-subheading">Category-wise Sales</h4>
+
+            <div class="report-table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Units Sold</th>
+                            <th>Sales Value</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="categorySalesReport">
+                        <tr>
+                            <td colspan="3">Loading category sales...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <h4 class="report-subheading">Top 10 Selling Products</h4>
+
+            <div class="report-table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Product</th>
+                            <th>Units Sold</th>
+                            <th>Sales Value</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="topSellingProductsReport">
+                        <tr>
+                            <td colspan="4">Loading top products...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <h4 class="report-subheading">Bottom 10 Selling Products</h4>
+
+            <div class="report-table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Product</th>
+                            <th>Units Sold</th>
+                            <th>Sales Value</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bottomSellingProductsReport">
+                        <tr>
+                            <td colspan="4">Loading bottom products...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPORT -->
+
+        <section class="export-panel">
+
+            <div>
+                <p class="eyebrow">DOWNLOAD YOUR DATA</p>
+                <h3>Export Reports</h3>
+
+                <p>
+                    Download the currently filtered report data
+                    as a CSV file.
+                </p>
+            </div>
+
+            <button type="button" id="exportReportButton">
+                Export CSV
+            </button>
+
+        </section>
+
+
+        <p id="reportMessage" class="report-message"></p>
+
+        <footer class="admin-footer">
+            © 2026 VELORA. All rights reserved.
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="../js/firebase-config.js"></script>
+<script src="../js/firebase-auth.js"></script>
+<script src="../js/firestore.js"></script>
+<script src="../js/admin-reports.js"></script>
+<script src="../js/admin-logout.js"></script>
+
+</body>
+</html>

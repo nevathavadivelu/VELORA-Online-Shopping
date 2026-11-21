@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Details | VELORA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/product-details.css">
+</head>
+
+<body>
+
+    <div class="announcement">
+        THE ART OF EVERYDAY LIVING ✦ DISCOVER VELORA
+    </div>
+
+    <header class="shop-navbar">
+
+        <a href="home.html" class="shop-logo">
+            VELORA<span>.</span>
+        </a>
+
+        <nav class="shop-nav-links">
+            <a href="home.html">Home</a>
+            <a href="products.html" class="active">Shop</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="cart.html">My Cart</a>
+            <a href="dashboard.html">My Profile</a>
+        </nav>
+
+        <button type="button" id="logoutButton" class="shop-logout">
+            Logout
+        </button>
+
+    </header>
+
+    <main>
+
+        <div class="breadcrumb">
+            <a href="home.html">Home</a>
+            <span>/</span>
+            <a href="products.html">Collection</a>
+            <span>/</span>
+            <span>Product Details</span>
+        </div>
+
+        <section class="product-detail-section">
+
+            <div id="productDetail" class="product-detail-container">
+
+                <div class="loading-message">
+                    Loading product details...
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="related-section">
+
+            <div class="section-heading">
+                <p class="eyebrow">MORE TO DISCOVER</p>
+                <h2>You may also love</h2>
+                <p>Explore more from the VELORA collection.</p>
+            </div>
+
+            <div id="relatedProducts" class="related-grid">
+                <p>Discovering more products...</p>
+            </div>
+
+        </section>
+
+        <section class="details-promo">
+
+            <p class="eyebrow">THE VELORA EXPERIENCE</p>
+
+            <h2>
+                Thoughtful choices.<br>
+                Everyday elegance.
+            </h2>
+
+            <a href="products.html">EXPLORE THE COLLECTION →</a>
+
+        </section>
+
+    </main>
+
+    <footer class="shop-footer">
+
+        <a href="home.html" class="shop-logo">
+            VELORA<span>.</span>
+        </a>
+
+        <p>THE ART OF EVERYDAY LIVING</p>
+
+        <div class="footer-menu">
+            <a href="home.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="cart.html">My Cart</a>
+        </div>
+
+        <p class="footer-copyright">
+            © 2026 VELORA. All rights reserved.
+        </p>
+
+    </footer>
+
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/firebase-auth.js"></script>
+    <script src="../js/firestore.js"></script>
+    <script src="../js/product-details.js"></script>
+
+</body>
+</html>

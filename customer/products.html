@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VELORA | Our Collection</title>
+
+    <link rel="stylesheet" href="../css/catalogue.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Page structure and controls */
+
+        .catalogue-page {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 35px 5%;
+        }
+
+        .catalogue-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .catalogue-heading h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: #193d32;
+            margin-bottom: 10px;
+        }
+
+        .catalogue-heading p {
+            color: #777b73;
+            font-size: 14px;
+        }
+
+        .catalogue-filters {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .catalogue-filters input,
+        .catalogue-filters select {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #e5e2d9;
+            border-radius: 5px;
+            background: #fff;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            color: #29332d;
+            outline: none;
+        }
+
+        .catalogue-filters input:focus,
+        .catalogue-filters select:focus {
+            border-color: #193d32;
+        }
+
+        #productCount {
+            margin-bottom: 20px;
+            color: #777b73;
+            font-size: 13px;
+        }
+
+        /* Product grid */
+
+        #productList {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid #eeeae1;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            height: 260px;
+            background: #f1eee6;
+            overflow: hidden;
+        }
+
+        .product-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image-wrapper img {
+            transform: scale(1.04);
+        }
+
+        .stock-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 6px 10px;
+            background: #193d32;
+            color: white;
+            font-size: 9px;
+            letter-spacing: 1px;
+            border-radius: 2px;
+        }
+
+        .product-details {
+            padding: 17px;
+        }
+
+        .product-category {
+            color: #a18a5d;
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .product-details h3 {
+            color: #193d32;
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .product-description {
+            color: #777b73;
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .product-stock {
+            color: #777b73;
+            font-size: 11px;
+            margin-bottom: 15px;
+        }
+
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-price {
+            color: #193d32;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .add-to-cart {
+            padding: 10px 13px;
+            background: #193d32;
+            border: 1px solid #193d32;
+            color: #fff;
+            font-size: 11px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .add-to-cart:hover:not(:disabled) {
+            background: #315747;
+        }
+
+        .add-to-cart:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .empty-products {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 15px;
+            color: #777b73;
+        }
+
+        /* Pagination */
+
+        .customer-pagination {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+            margin: 40px 0;
+        }
+
+        .customer-pagination-info {
+            color: #777b73;
+            font-size: 12px;
+        }
+
+        .customer-pagination-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .customer-page-button {
+            min-width: 40px;
+            min-height: 40px;
+            padding: 8px 13px;
+            border: 1px solid #e5e2d9;
+            border-radius: 4px;
+            background: white;
+            color: #193d32;
+            cursor: pointer;
+        }
+
+        .customer-page-button.active,
+        .customer-page-button:hover:not(:disabled) {
+            background: #193d32;
+            color: white;
+            border-color: #193d32;
+        }
+
+        .customer-page-button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        /* Header */
+
+        .catalogue-header {
+            background: #193d32;
+            color: white;
+            padding: 18px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .catalogue-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 3px;
+        }
+
+        .catalogue-nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .catalogue-nav a,
+        .catalogue-nav button {
+            color: white;
+            text-decoration: none;
+            background: transparent;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .catalogue-nav a:hover,
+        .catalogue-nav button:hover {
+            color: #d4bd8a;
+        }
+
+        @media (max-width: 900px) {
+            #productList {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 650px) {
+            .catalogue-header {
+                flex-direction: column;
+            }
+
+            .catalogue-nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .catalogue-filters {
+                grid-template-columns: 1fr;
+            }
+
+            #productList {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .product-image-wrapper {
+                height: 180px;
+            }
+
+            .product-details {
+                padding: 12px;
+            }
+
+            .product-details h3 {
+                font-size: 16px;
+            }
+
+            .product-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .catalogue-heading h1 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            #productList {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="catalogue-header">
+
+        <a href="home.html" class="catalogue-logo">
+            VELORA
+        </a>
+
+        <nav class="catalogue-nav">
+            <a href="home.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="my-orders.html">My Orders</a>
+            <button type="button" id="logoutButton">Logout</button>
+        </nav>
+
+    </header>
+
+
+    <!-- PRODUCT CATALOGUE -->
+    <main class="catalogue-page">
+
+        <section class="catalogue-heading">
+
+            <h1>Our Collection</h1>
+
+            <p>
+                Discover thoughtfully selected products for everyday living.
+            </p>
+
+        </section>
+
+
+        <!-- SEARCH AND FILTERS -->
+        <section class="catalogue-filters">
+
+            <input
+                type="search"
+                id="productSearch"
+                placeholder="Search products..."
+                aria-label="Search products"
+            >
+
+            <select id="categoryFilter" aria-label="Filter by category">
+
+                <option value="all">All Categories</option>
+
+            </select>
+
+            <select id="sortFilter" aria-label="Sort products">
+
+                <option value="default">Default Sorting</option>
+
+                <option value="low-high">
+                    Price: Low to High
+                </option>
+
+                <option value="high-low">
+                    Price: High to Low
+                </option>
+
+                <option value="name">
+                    Name: A to Z
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- PRODUCT COUNT -->
+        <p id="productCount">Loading products...</p>
+
+
+        <!-- PRODUCT LIST -->
+        <section id="productList" aria-live="polite">
+
+            <p class="empty-products">
+                Loading our collection...
+            </p>
+
+        </section>
+
+
+        <!-- PAGINATION -->
+        <div
+            id="productPagination"
+            class="customer-pagination"
+        ></div>
+
+    </main>
+
+
+    <!-- FIREBASE AND PRODUCT SCRIPTS -->
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/firebase-auth.js"></script>
+    <script src="../js/firestore.js"></script>
+    <script src="../js/products.js"></script>
+
+</body>
+
+</html>

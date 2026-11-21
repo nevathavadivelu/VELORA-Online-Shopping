@@ -1,0 +1,482 @@
+
+:root {
+    --cream: #f8f6f0;
+    --white: #ffffff;
+    --green: #183c32;
+    --dark-green: #102b24;
+    --gold: #b99a5b;
+    --text: #292d29;
+    --muted: #777b73;
+    --border: #e9e5da;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--cream);
+    color: var(--text);
+}
+
+/* Announcement */
+
+.announcement-bar {
+    background: var(--dark-green);
+    color: #e6d5ad;
+    text-align: center;
+    padding: 10px;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+/* Navbar */
+
+.navbar {
+    height: 78px;
+    padding: 0 7%;
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo,
+.footer-logo {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-decoration: none;
+    color: var(--green);
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.logout-button {
+    text-decoration: none;
+    border: 1px solid var(--green);
+    padding: 11px 20px;
+    color: var(--green);
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.logout-button:hover {
+    background: var(--green);
+    color: var(--white);
+}
+
+/* Main */
+
+.success-page {
+    min-height: 85vh;
+    padding: 65px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-card {
+    width: 100%;
+    max-width: 760px;
+    background: var(--white);
+    padding: 55px 65px;
+    border: 1px solid var(--border);
+    box-shadow: 0 15px 50px rgba(24, 60, 50, 0.06);
+    text-align: center;
+    animation: fadeUp 0.7s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Success Icon */
+
+.success-icon {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 28px;
+    border-radius: 50%;
+    background: #eaf2ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #c9ddce;
+}
+
+.checkmark {
+    font-size: 43px;
+    color: var(--green);
+    animation: checkPop 0.6s ease;
+}
+
+@keyframes checkPop {
+    0% {
+        transform: scale(0);
+    }
+
+    70% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.success-label {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.success-card h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 38px;
+    color: var(--green);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.success-message {
+    max-width: 470px;
+    margin: 0 auto;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* Order Status */
+
+.order-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: #edf4ed;
+    color: var(--green);
+    padding: 12px 20px;
+    font-size: 10px;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    margin: 28px 0;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #4e9563;
+    border-radius: 50%;
+}
+
+/* Order Information */
+
+.order-information {
+    background: var(--cream);
+    padding: 25px 30px;
+    text-align: left;
+    margin: 10px 0 30px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+
+.info-row span {
+    color: var(--muted);
+}
+
+.info-row strong {
+    color: var(--green);
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.total-row {
+    border-bottom: none;
+    padding-top: 19px;
+}
+
+.total-row strong {
+    font-size: 20px;
+    color: var(--gold);
+}
+
+/* Ordered Products */
+
+.ordered-products {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.ordered-products h2 {
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 10px;
+}
+
+.success-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+
+.success-item-name {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.success-item-quantity {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.success-item-price {
+    color: var(--green);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Email Message */
+
+.delivery-message {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    background: #f8f6f0;
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.delivery-icon {
+    font-size: 25px;
+    color: var(--gold);
+}
+
+.delivery-message h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--green);
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.delivery-message p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+/* Buttons */
+
+.success-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    min-height: 48px;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.primary-button {
+    background: var(--green);
+    color: var(--white);
+    border: 1px solid var(--green);
+}
+
+.primary-button:hover {
+    background: var(--dark-green);
+}
+
+.secondary-button {
+    border: 1px solid var(--green);
+    color: var(--green);
+}
+
+.secondary-button:hover {
+    background: var(--green);
+    color: var(--white);
+}
+
+.thank-you-note {
+    margin-top: 30px;
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    color: var(--gold);
+    font-style: italic;
+}
+
+/* Footer */
+
+.footer {
+    background: var(--dark-green);
+    color: var(--white);
+    text-align: center;
+    padding: 35px 15px;
+}
+
+.footer-logo {
+    color: var(--white);
+    font-size: 26px;
+}
+
+.footer p {
+    color: #d9c69e;
+    letter-spacing: 3px;
+    font-size: 9px;
+    margin: 10px 0 18px;
+}
+
+.footer span {
+    font-size: 11px;
+    color: #c0c9c2;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: auto;
+        min-height: 70px;
+        padding: 15px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px 22px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .logout-button {
+        padding: 9px 13px;
+        font-size: 10px;
+    }
+
+    .success-page {
+        padding: 35px 13px;
+    }
+
+    .success-card {
+        padding: 35px 20px;
+    }
+
+    .success-card h1 {
+        font-size: 29px;
+    }
+
+    .success-message {
+        font-size: 13px;
+    }
+
+    .order-information {
+        padding: 18px 15px;
+    }
+
+    .info-row {
+        font-size: 12px;
+    }
+
+    .total-row strong {
+        font-size: 17px;
+    }
+
+    .success-actions {
+        flex-direction: column;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .delivery-message {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .success-card h1 {
+        font-size: 25px;
+    }
+
+    .info-row {
+        align-items: flex-start;
+    }
+
+    .info-row strong {
+        max-width: 58%;
+    }
+}

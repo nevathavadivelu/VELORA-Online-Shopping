@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | VELORA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+
+    <a href="home.html" class="back-home">← Back to VELORA</a>
+
+    <main class="auth-wrapper">
+
+        <!-- Left visual panel -->
+        <section class="auth-visual">
+
+            <div class="visual-content">
+
+                <a href="home.html" class="visual-brand">VELORA.</a>
+
+                <p class="visual-eyebrow">
+                    THE ART OF EVERYDAY LIVING
+                </p>
+
+                <h1>
+                    Discover a little more luxury.
+                </h1>
+
+                <p>
+                    Thoughtfully selected essentials
+                    for a more beautiful everyday.
+                </p>
+
+                <div class="visual-line"></div>
+
+                <span>VELORA · EST. 2026</span>
+
+            </div>
+
+        </section>
+
+        <!-- Login form -->
+        <section class="auth-form-section">
+
+            <div class="auth-card">
+
+                <a href="home.html" class="brand-logo">
+                    VELORA<span>.</span>
+                </a>
+
+                <p class="form-eyebrow">WELCOME BACK</p>
+
+                <h2>Sign in to your account</h2>
+
+                <p class="form-description">
+                    We're happy to have you back.
+                    Please enter your details.
+                </p>
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="password">Password</label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="forgot-row">
+
+                        <a href="#" id="forgotPassword">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+                    <button type="submit" class="auth-button">
+
+                        <span>Sign In</span>
+
+                        <span>→</span>
+
+                    </button>
+
+                    <p
+                        id="message"
+                        class="auth-message"
+                        aria-live="polite">
+                    </p>
+
+                </form>
+
+                <div class="auth-divider">
+                    <span>NEW TO VELORA?</span>
+                </div>
+
+                <p class="switch-auth">
+                    Don't have an account?
+                    <a href="register.html">Create Account</a>
+                </p>
+
+                <p class="secure-note">
+                    A thoughtful shopping experience awaits.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Existing Firebase REST API scripts -->
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/firebase-auth.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/admin-logout.js"></script>
+
+</body>
+</html>

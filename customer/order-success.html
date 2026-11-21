@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmed | VELORA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/order-success.css">
+</head>
+
+<body>
+
+    <div class="announcement-bar">
+        THE ART OF EVERYDAY LIVING
+    </div>
+
+    <header class="navbar">
+
+        <a href="home.html" class="logo">VELORA<span>.</span></a>
+
+        <nav class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="cart.html">My Cart</a>
+        </nav>
+
+        <a href="login.html" class="logout-button" id="logoutButton">
+            LOGOUT
+        </a>
+
+    </header>
+
+    <main class="success-page">
+
+        <div class="success-card">
+
+            <div class="success-icon">
+                <div class="checkmark">✓</div>
+            </div>
+
+            <p class="success-label">ORDER CONFIRMATION</p>
+
+            <h1>Thank You for Your Order!</h1>
+
+            <p class="success-message">
+                Your order has been placed successfully.
+                We're delighted that you chose VELORA.
+            </p>
+
+            <div class="order-status">
+                <span class="status-dot"></span>
+                ORDER PLACED SUCCESSFULLY
+            </div>
+
+            <div class="order-information">
+
+                <div class="info-row">
+                    <span>Order ID</span>
+                    <strong id="successOrderId">Loading...</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Order Date</span>
+                    <strong id="successOrderDate">Loading...</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Payment Method</span>
+                    <strong id="successPayment">Loading...</strong>
+                </div>
+
+                <div class="info-row total-row">
+                    <span>Total Amount</span>
+                    <strong id="successTotal">₹0.00</strong>
+                </div>
+
+            </div>
+
+            <section class="ordered-products">
+
+                <h2>YOUR ORDER</h2>
+
+                <div id="successOrderItems">
+                    <p>Loading your items...</p>
+                </div>
+
+            </section>
+
+            <div class="delivery-message">
+                <span class="delivery-icon">✉</span>
+
+                <div>
+                    <h3>Order Confirmation</h3>
+                    <p id="emailStatus">
+                        Your order confirmation details are available here.
+                    </p>
+                </div>
+            </div>
+
+            <div class="success-actions">
+
+                <a href="products.html" class="primary-button">
+                    CONTINUE SHOPPING
+                </a>
+
+                <a href="my-orders.html" class="secondary-button">
+                    VIEW MY ORDERS
+                </a>
+
+            </div>
+
+            <p class="thank-you-note">
+                Thank you for being a part of VELORA.
+            </p>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+        <a href="home.html" class="footer-logo">VELORA.</a>
+
+        <p>THE ART OF EVERYDAY LIVING</p>
+
+        <span>© 2026 VELORA. All rights reserved.</span>
+
+    </footer>
+
+    <script src="../js/order-success.js"></script>
+
+</body>
+</html>

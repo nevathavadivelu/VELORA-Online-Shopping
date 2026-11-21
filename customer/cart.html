@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Shopping Bag | VELORA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+
+<body>
+
+    <!-- Announcement -->
+    <div class="announcement-bar">
+        THE ART OF EVERYDAY LIVING ✦ COMPLIMENTARY DELIVERY ABOVE ₹999
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <a href="home.html" class="logo">
+            VELORA<span>.</span>
+        </a>
+
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="cart.html" class="active">My Cart</a>
+            <a href="dashboard.html">My Profile</a>
+            <a href="#" id="logoutButton">Logout</a>
+        </nav>
+
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="home.html">Home</a>
+        <span>/</span>
+        <span>My Shopping Bag</span>
+    </div>
+
+    <!-- Heading -->
+    <section class="cart-heading">
+
+        <p class="eyebrow">YOUR VELORA SELECTION</p>
+
+        <h1>My Shopping Bag</h1>
+
+        <p>Beautiful choices, ready to be yours.</p>
+
+        <div class="heading-decoration"></div>
+
+    </section>
+
+    <!-- Main Cart -->
+    <main class="cart-container">
+
+        <!-- Products -->
+        <section class="cart-products-section">
+
+            <div class="cart-section-heading">
+
+                <div>
+                    <p class="section-eyebrow">YOUR SELECTION</p>
+                    <h2>Your Items</h2>
+                </div>
+
+                <a href="products.html">
+                    CONTINUE SHOPPING →
+                </a>
+
+            </div>
+
+            <div id="cartList" class="cart-list">
+
+                <p class="cart-loading">
+                    Loading your shopping bag...
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Summary -->
+        <aside class="cart-summary">
+
+            <p class="section-eyebrow">ORDER DETAILS</p>
+
+            <h2>Order Summary</h2>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Delivery</span>
+                <span class="delivery-value">At checkout</span>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="delivery-message">
+                <span class="delivery-icon">✦</span>
+                Complimentary delivery on orders above ₹999.
+            </div>
+
+            <a href="checkout.html" class="checkout-button">
+                PROCEED TO CHECKOUT →
+            </a>
+
+            <a href="products.html" class="continue-button">
+                CONTINUE SHOPPING
+            </a>
+
+            <p class="secure-note">
+                Secure checkout · Customer-first service
+            </p>
+
+        </aside>
+
+    </main>
+
+    <!-- Brand Message -->
+    <section class="cart-brand-message">
+
+        <p class="eyebrow">THE VELORA PROMISE</p>
+
+        <h2>
+            Thoughtful choices.<br>
+            Beautifully delivered.
+        </h2>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <a href="home.html" class="footer-logo">
+            VELORA<span>.</span>
+        </a>
+
+        <p class="footer-tagline">
+            THE ART OF EVERYDAY LIVING
+        </p>
+
+        <div class="footer-menu">
+            <a href="home.html">Home</a>
+            <a href="products.html">Shop</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="cart.html">My Cart</a>
+        </div>
+
+        <p class="footer-copyright">
+            © 2026 VELORA. All rights reserved.
+        </p>
+
+    </footer>
+
+    <!-- Existing Firebase REST API -->
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/firebase-auth.js"></script>
+    <script src="../js/firestore.js"></script>
+    <script src="../js/cart.js"></script>
+
+</body>
+</html>
