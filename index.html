@@ -1,39 +1,19 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnlineShopping</title>
+    <title>VELORA | Online Shopping</title>
+    <meta http-equiv="refresh" content="0; url=customer/home.html">
 </head>
-
 <body>
-
-    <h1>Welcome to OnlineShopping</h1>
-    <p>Our online shopping website is under development.</p>
-
-    <!-- Firebase Configuration -->
-    <script src="js/firebase-config.js"></script>
-
-    <!-- Configuration Test -->
+    <p>Welcome to VELORA!</p>
+    <p>If you are not redirected,
+        <a href="customer/home.html">click here to shop</a>.
+    </p>
     <script>
-        console.log("OnlineShopping website loaded!");
-
-        console.log("Firebase Configuration:");
-        console.log(window.firebaseConfig);
+        window.location.replace("customer/home.html");
     </script>
-    <script src="js/firebase-config.js"></script>
-    <script src="js/firebase-auth.js"></script>
-
-<script>
-    console.log("Firebase Configuration:", window.firebaseConfig);
-
-    console.log("Registration function:", typeof registerUser);
-    console.log("Login function:", typeof loginUser);
-    console.log("Password reset function:", typeof resetPassword);
-</script>
-
-
 </body>
 </html>
